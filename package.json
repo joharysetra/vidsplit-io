@@ -1,6 +1,6 @@
 {
   "name": "vidsplit-io",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "\"vidsplit-io\" is a Node.js plugin offering seamless video manipulation, including splitting, URL-based downloading, and reassembling. With intuitive usage and powerful features, it simplifies video processing workflows. Simply integrate it into your projects for efficient video management.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -15,7 +15,8 @@
     "url": "git+https://github.com/joharysetra/vidsplit-io.git"
   },
   "keywords": [
-    "vidsplit-io"
+    "vidsplit-io",
+    "video split"
   ],
   "author": "Setra Johariniaina",
   "license": "MIT",

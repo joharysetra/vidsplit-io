@@ -32,7 +32,7 @@ const splitVideo = async (OptionPath: OptionPath, shouldSizePartMb: number = 20,
     const restEstimationPart = estimationNbrPartFloat - estimationNbrPartInt;
     const restEstimationPartSeconde = (videoInfo.seconde * (restEstimationPart * shouldSizePartMb)) / videoInfo.size;
     const isEstimationNbrPartInt = Number.isInteger(estimationNbrPartFloat);
-    const estimationNbrPartIterator = !isEstimationNbrPartInt ? estimationNbrPartInt : estimationNbrPartInt + 1;
+    const estimationNbrPartIterator = isEstimationNbrPartInt ? estimationNbrPartInt : estimationNbrPartInt + 1;
 
     for (let index = 0; index < estimationNbrPartIterator; index++) {
         await cutPartVideo({
@@ -42,7 +42,7 @@ const splitVideo = async (OptionPath: OptionPath, shouldSizePartMb: number = 20,
             outputPath: `${OptionPath.outputFolder}/${prefixeName}${index}.mp4`
         });
 
-        if (!isEstimationNbrPartInt) {
+        if (isEstimationNbrPartInt) {
             startTime += shouldSizePartSeconde;
         } else {
             if (index === estimationNbrPartIterator - 1) {
